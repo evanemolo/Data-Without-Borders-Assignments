@@ -1,4 +1,4 @@
-tweets = read.csv("/Users/evanemolo/Dropbox/_ITP/_Fall_2012/DWB/HW/WK3/libya_tweets_EE.csv", as.is = TRUE)
+tweets = read.csv("/Users/evanemolo/Dropbox/_ITP/_Fall_2012/DWB/HW/WK3/libya_tweets.csv", as.is = TRUE)
 
 # Part 1
 
