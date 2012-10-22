@@ -53,7 +53,7 @@ hist(five.K.or.less.followers$followers, breaks=10000, xlim= c(0,10000))
 
 # Write code to find the 5 most popular words used in the descriptions of our users
 
-# use strsplit to seperate the words in the description
+# use strsplit() to seperate the words in the description
 split.description = strsplit(tweets$description, split = "[^a-zA-Z0-9]+")
 # use unlist() to turn the list into a vector
 split.description = unlist(strsplit(tweets$description, split = "[^a-zA-Z0-9]+"))
@@ -70,7 +70,7 @@ stopwords = c(stopwords, "", "&", "-", "|", "http")
 stopwords = unlist(stopwords)
 # use %in% to remove the stopwords from split.description
 split.desc.clean = split.description[!(split.description %in% stopwords)]
-# reverse sort the vector, and target the first five index numbers 
+# reverse sort the vector, and target the first five index numbers
 rev(sort(table(split.desc.clean)))[1:5]
 
 #  news   conservative    world   love    follow 
