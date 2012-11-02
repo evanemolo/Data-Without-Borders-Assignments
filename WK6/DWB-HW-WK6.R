@@ -30,10 +30,14 @@ plot(tweets.parts)
 
 # Part 2
 
+# Import the data and TTR library:
+#tweets = read.csv("http://jakeporway.com/teaching/data/tweets2009.csv", header=FALSE, as.is=TRUE)
+tweets = read.csv("/Users/evanemolo/Dropbox/_ITP/_Fall_2012/DWB/HW/WK6/tweets2009.csv", as.is=TRUE, header=FALSE)
+library(TTR)
+# Assign a vector to the names() function to name the columns
+names(tweets) = c("time", "seconds", "screen_name", "text")
 # Let's search the tweets for "Iran" using grep()
 iran.tweets = tweets[grep("iran", ignore.case=TRUE, tweets$text), ]
-# load TTR library
-library(TTR)
 # Plot the time series for iran.tweets
 iran.tweets.hist = hist(iran.tweets$seconds, breaks=100)
 plot(iran.tweets.hist$counts, type='l')
@@ -51,7 +55,7 @@ plot.ts(iran.tweets.diff)
 # Show both the SMA graph and the diff graph
 par(mfrow=c(2,1))
 plot.ts(iran.tweets.ts.sma, type='l', main="Moving Average of Tweets")
-plot.ts(iran.tweets.diff, type='l', main="diff")
+plot.ts(iran.tweets.diff, type='l', main="Velocity of Tweets")
 # What do you see?
 # The highest increase in tweet volume corresponds to the increase
 # in the moving average of tweets
